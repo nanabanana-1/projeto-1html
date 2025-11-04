@@ -2,40 +2,133 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>ESPONJA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPONJA - Nocturna Corp</title>
+    <!-- CSS Externo (mesmo arquivo para todas as páginas) -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Incorporado (específico para esta página) -->
+    <style>
+        /* Estilos específicos para a página Esponja */
+        .product-highlight {
+            background: linear-gradient(135deg, #003326, #00664d);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #00cc99;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(0, 204, 153, 0.5);
+        }
+        
+        .product-highlight h2 {
+            color: #80ffdf;
+            text-align: center;
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .media-item {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        /* Destaque especial para a Esponja Sombria */
+        .sponge-features {
+            background-color: #001a14;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #00cc99;
+            margin: 1.5rem 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>ESPONJA</h1>
-        <p>Esponja Sombria - Limpeza Profunda</p>
-    </header>
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="SABAO.html">Sabão</a> |
-        <a href="DETERGENTE.html">Detergente</a> |
-        <a href="BOMBRIL.html">Bombril</a>
-    </nav>
-    <main>
-        <section>
-            <article>
-                <a href="PRODUTOS.html">
-                    <img src="https://cdn.pixabay.com/photo/2014/12/21/23/50/sponge-579135_1280.png" alt="Esponja Sombria" width="220">
-                </a>
-                <p>Esponja Sombria - Limpeza Profunda</p>
-                <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
-                    Seu navegador não suporta áudio.
-                </audio>
-                <br>
-                <video width="320" height="180" controls>
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
-                <br>
-                <a href="PRODUTOS.html">Voltar para PRODUTOS</a>
-            </article>
-        </section>
+    <div class="container">
+        <header>
+            <h1>NOCTURNA CORP</h1>
+            <p>O Poder das Sombras na Limpeza Doméstica</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SABAO.html">Sabão</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+                <li><a href="ESPONJA.html" style="background-color: #003326; box-shadow: 0 0 10px #00cc99;">Esponja</a></li>
+                <li><a href="BOMBRIL.html">Bombril</a></li>
+                <li><a href="SOBRE.html">Sobre</a></li>
+                <li><a href="PARCEIROS.html">Parceiros</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <div class="product-highlight">
+                    <h2>ESPONJA SOMBRIA</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #80ffdf;">Limpeza Profunda das Trevas</p>
+                </div>
+                
+                <article>
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <a href="PRODUTOS.html">
+                            <img src="https://cdn.pixabay.com/photo/2014/12/21/23/50/sponge-579135_1280.png" alt="Esponja Sombria" width="60%" style="max-width: 400px;">
+                        </a>
+                    </div>
+                    
+                    <div class="sponge-features">
+                        <h3 style="color: #00cc99; margin-bottom: 1rem;">Características da Esponja Sombria</h3>
+                        <ul style="color: #80ffdf; list-style-type: none;">
+                            <li style="margin-bottom: 0.5rem;">✓ Absorção sobrenatural de sujeira</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Durabilidade das profundezas</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Textura das sombras</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Eficácia noturna comprovada</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="media-container">
+                        <div class="media-item">
+                            <p style="color: #b3b3ff; margin-bottom: 1rem;">Ouça os sussurros da limpeza profunda</p>
+                            <audio controls style="width: 100%;">
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+                                Seu navegador não suporta áudio.
+                            </audio>
+                        </div>
+                        
+                        <div class="media-item">
+                            <p style="color: #b3b3ff; margin-bottom: 1rem;">Testemunhe o poder da esponja em ação</p>
+                            <video width="100%" height="auto" controls>
+                                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeo.
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <a href="PRODUTOS.html" style="
+                            display: inline-block;
+                            padding: 10px 20px;
+                            background-color: #003326;
+                            color: #80ffdf;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            border: 1px solid #00cc99;
+                            transition: all 0.3s;
+                        " onmouseover="this.style.backgroundColor='#004d39'; this.style.boxShadow='0 0 10px #00cc99'" 
+                           onmouseout="this.style.backgroundColor='#003326'; this.style.boxShadow='none'">
+                            Voltar para Produtos
+                        </a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
         <aside>
             <h2>Outros Produtos</h2>
             <ul>
@@ -43,10 +136,25 @@
                 <li><a href="DETERGENTE.html">Detergente Noturno</a></li>
                 <li><a href="BOMBRIL.html">Bombril das Trevas</a></li>
             </ul>
+            
+            <h3 style="margin-top: 2rem;">Vantagens</h3>
+            <ul>
+                <li>Não arranha superfícies</li>
+                <li>Absorve líquidos sombrios</li>
+                <li>Durabilidade eterna</li>
+                <li>Design gótico exclusivo</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background-color: #001a14; border-radius: 5px; border: 1px solid #00cc99;">
+                <h4 style="color: #80ffdf; margin-bottom: 0.5rem;">Dica Noturna:</h4>
+                <p style="color: #b3ffec; font-size: 0.9rem;">Use a Esponja Sombria após o pôr do sol para resultados maximizados.</p>
+            </div>
         </aside>
-    </main>
-    <footer>
-        <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
-    </footer>
+        
+        <footer>
+            <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">A escuridão nunca foi tão limpa</p>
+        </footer>
+    </div>
 </body>
 </html>

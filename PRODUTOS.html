@@ -2,70 +2,461 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Gótica de Produtos - Nocturna Corp</title>
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Grenze+Gotisch:wght@300;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    
+    <!-- CSS INCORPORADO -->
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a0a"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%231a1a1a" stroke-width="1"/></svg>');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1a0033 0%, #330033 50%, #000033 100%);
+            color: #c0a0ff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 3px solid #5d00a3;
+            box-shadow: 0 5px 15px rgba(93, 0, 163, 0.3);
+        }
+        
+        header h1 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(192, 160, 255, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        /* NAVEGAÇÃO */
+        nav {
+            background-color: #1a0033;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #5d00a3;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.8rem;
+            color: #c0a0ff;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: #c0a0ff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: #5d00a3;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(93, 0, 163, 0.7);
+        }
+        
+        .nav-links a.active {
+            background-color: #5d00a3;
+            color: #ffffff;
+        }
+        
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        /* SECTIONS */
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border-left: 4px solid #5d00a3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        section h2 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #c0a0ff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 1px solid #5d00a3;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        /* GALERIA DE PRODUTOS */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #5d00a3;
+            text-align: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(93, 0, 163, 0.5);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #5d00a3;
+        }
+        
+        .product-name {
+            padding: 15px;
+            font-family: 'Grenze Gotisch', cursive;
+            font-size: 1.3rem;
+            color: #c0a0ff;
+            background-color: rgba(26, 0, 51, 0.7);
+        }
+        
+        .product-card a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* ÁUDIO E VÍDEO */
+        audio, video {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 5px;
+            border: 2px solid #5d00a3;
+        }
+        
+        /* BOTÕES */
+        .btn {
+            display: inline-block;
+            background-color: #5d00a3;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .btn:hover {
+            background-color: #c0a0ff;
+            color: #1a0033;
+            box-shadow: 0 0 15px rgba(93, 0, 163, 0.7);
+            transform: translateY(-3px);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        /* LISTA */
+        ol {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ol li {
+            margin-bottom: 10px;
+        }
+        
+        /* ASIDE */
+        aside {
+            background: linear-gradient(145deg, #1a0033 0%, #330033 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-right: 4px solid #5d00a3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        aside h3 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #c0a0ff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #5d00a3;
+            padding-bottom: 10px;
+        }
+        
+        aside ul {
+            list-style-type: none;
+        }
+        
+        aside ul li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        aside ul li:before {
+            content: "🦇";
+            position: absolute;
+            left: 0;
+        }
+        
+        aside a {
+            color: #c0a0ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        aside a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #000033 0%, #1a0033 50%, #330033 100%);
+            color: #c0a0ff;
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 3px solid #5d00a3;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Grenze Gotisch', cursive;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #c0a0ff;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #5d00a3;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #c0a0ff;
+            color: #1a0033;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #5d00a3;
+            font-size: 0.9rem;
+        }
+        
+        /* DECORAÇÕES TEMÁTICAS */
+        .gothic-decoration {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #5d00a3;
+            text-shadow: 0 0 10px rgba(93, 0, 163, 0.7);
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Galeria Gótica de Produtos</h1>
+    <!-- CSS INLINE -->
+    <header style="position: relative; overflow: hidden;">
+        <div class="container">
+            <h1>Galeria Gótica de Produtos</h1>
+        </div>
     </header>
+    
     <nav>
-        <a href="index.html">Início</a> |
-        <a href="SABAO.html">Sabão</a> |
-        <a href="ESPONJA.html">Esponja</a> |
-        <a href="DETERGENTE.html">Detergente</a> |
-        <a href="BOMBRIL.html">Bombril</a>
+        <div class="container nav-container">
+            <div class="logo">Nocturna</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html" class="active">Produtos</a></li>
+                <li><a href="SABAO.html">Sabão</a></li>
+                <li><a href="ESPONJA.html">Esponja</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+                <li><a href="BOMBRIL.html">Bombril</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <section>
-            <article>
-                <ol>
-                    <li>
-                        <a href="index.html">ir de volta para index</a>
-                    </li>
-                </ol>
-                <h2>🦇 Galeria Gótica de Produtos 🦇</h2>
+    
+    <div class="container main-content">
+        <div>
+            <section>
+                <div class="gothic-decoration">🦇 Galeria Gótica de Produtos 🦇</div>
+                
+                <h3>Experiência Sonora das Trevas</h3>
                 <audio controls>
                     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
                     Seu navegador não suporta áudio.
                 </audio>
-                <br>
-                <table border="1">
-                    <tr>
-                        <td>
-                            <a href="SABAO.html">
-                                <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Sabão Gótico" width="120"><br>
-                                Sabão
-                            </a>
-                        </td>
-                        <td>
-                            <a href="ESPONJA.html">
-                                <img src="https://cdn.pixabay.com/photo/2014/12/21/23/50/sponge-579135_1280.png" alt="Esponja Sombria" width="120"><br>
-                                Esponja
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="DETERGENTE.html">
-                                <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/detergent-1958302_1280.jpg" alt="Detergente Noturno" width="120"><br>
-                                Detergente
-                            </a>
-                        </td>
-                        <td>
-                            <a href="BOMBRIL.html">
-                                <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Bombril das Trevas" width="120"><br>
-                                Bombril
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                
+                <h2>Nossos Produtos Sobrenaturais</h2>
+                <div class="product-gallery">
+                    <div class="product-card">
+                        <a href="SABAO.html">
+                            <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Sabão Gótico" class="product-image">
+                            <div class="product-name">Sabão Gótico</div>
+                        </a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="ESPONJA.html">
+                            <img src="https://cdn.pixabay.com/photo/2014/12/21/23/50/sponge-579135_1280.png" alt="Esponja Sombria" class="product-image">
+                            <div class="product-name">Esponja Sombria</div>
+                        </a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="DETERGENTE.html">
+                            <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/detergent-1958302_1280.jpg" alt="Detergente Noturno" class="product-image">
+                            <div class="product-name">Detergente Noturno</div>
+                        </a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="BOMBRIL.html">
+                            <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Bombril das Trevas" class="product-image">
+                            <div class="product-name">Bombril das Trevas</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <h3>Demonstração Visual do Poder</h3>
                 <video width="320" height="180" controls>
                     <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
-            </article>
-        </section>
+                
+                <div class="btn-container">
+                    <a href="index.html" class="btn">Voltar para a Página Inicial</a>
+                </div>
+            </section>
+        </div>
+        
         <aside>
             <h3>Outros Produtos</h3>
             <ul>
@@ -73,11 +464,54 @@
                 <li><a href="ESPONJA.html">Esponja Sombria</a></li>
                 <li><a href="DETERGENTE.html">Detergente Noturno</a></li>
                 <li><a href="BOMBRIL.html">Bombril das Trevas</a></li>
+                <li><a href="#">Lustrador das Sombras</a></li>
+                <li><a href="#">Desinfetante Oculto</a></li>
+                <li><a href="#">Limpa Vidros Fantasma</a></li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Ofertas Especiais</h3>
+            <ul>
+                <li><strong>Pacote Noturno:</strong> 4 produtos por R$99</li>
+                <li><strong>Lua Cheia:</strong> Frete grátis hoje</li>
+                <li><strong>Meia-Noite:</strong> 15% off em pedidos acima de R$150</li>
             </ul>
         </aside>
-    </main>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><strong>Email:</strong> produtos@nocturnacorp.com</p>
+                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    <p><strong>Endereço:</strong> Rua das Sombras, 123 - Cidade Noturna</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="index.html">Início</a>
+                    <a href="PRODUTOS.html">Produtos</a>
+                    <a href="SABAO.html">Sabão</a>
+                    <a href="ESPONJA.html">Esponja</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Conecte-se</h3>
+                    <p>Siga-nos nas redes para ofertas sombrias</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://pinterest.com" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

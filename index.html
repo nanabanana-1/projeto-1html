@@ -1,57 +1,442 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação - Nocturna Corp</title>
+    <!-- CSS EXTERNO -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Grenze+Gotisch:wght@300;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    
+    <!-- CSS INCORPORADO -->
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1a0033 0%, #330033 50%, #000033 100%);
+            color: #c0a0ff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 3px solid #5d00a3;
+        }
+        
+        header h1 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(192, 160, 255, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        header p {
+            font-family: 'Grenze Gotisch', cursive;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+        mark {
+            background-color: #5d00a3;
+            color: #e0e0e0;
+            padding: 2px 5px;
+        }
+        
+        /* NAVEGAÇÃO */
+        nav {
+            background-color: #1a0033;
+            padding: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: #c0a0ff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            border-right: 1px solid #5d00a3;
+        }
+        
+        .nav-links a:hover {
+            background-color: #5d00a3;
+            color: #ffffff;
+        }
+        
+        .nav-links a.active {
+            background-color: #5d00a3;
+            color: #ffffff;
+        }
+        
+        .nav-links li:last-child a {
+            border-right: none;
+        }
+        
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+            flex: 1;
+        }
+        
+        /* SECTIONS */
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border-left: 4px solid #5d00a3;
+        }
+        
+        section h2 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #c0a0ff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 1px solid #5d00a3;
+            padding-bottom: 10px;
+        }
+        
+        section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        section img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 2px solid #5d00a3;
+        }
+        
+        /* LISTA */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "✦";
+            color: #5d00a3;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* GALERIA */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery img {
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* ASIDE */
+        aside {
+            background: linear-gradient(145deg, #1a0033 0%, #330033 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-right: 4px solid #5d00a3;
+            height: fit-content;
+        }
+        
+        aside h3 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #c0a0ff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #5d00a3;
+            padding-bottom: 10px;
+        }
+        
+        aside ul li {
+            margin-bottom: 15px;
+        }
+        
+        aside a {
+            color: #c0a0ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        aside a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #000033 0%, #1a0033 50%, #330033 100%);
+            color: #c0a0ff;
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 3px solid #5d00a3;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Grenze Gotisch', cursive;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #c0a0ff;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #5d00a3;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #c0a0ff;
+            color: #1a0033;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #5d00a3;
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .nav-links a {
+                border-right: none;
+                border-bottom: 1px solid #5d00a3;
+                text-align: center;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Elementos de texto especiais */
+        ins {
+            text-decoration: none;
+            border-bottom: 1px solid #5d00a3;
+        }
+        
+        del {
+            color: #888;
+        }
+        
+        strong {
+            color: #c0a0ff;
+        }
+        
+        small {
+            color: #a0a0a0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1><strong>Nocturna Corp</strong></h1>
-        <p>
-            <mark>Elegância nas sombras</mark>, inovação na noite.
-        </p>
-    </header>
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="coquettecalc.html">Currículo</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="SOBRE.html">Sobre</a> |
-        <a href="PARCEIROS.html"> Parceiros </a> |
-        <a href="tabela.html"> tabela </a> |
-        <a href="cadastro.html">contrataçao</a>
-    </nav>
-    <hr>
-    <div>
-        <section>
-            <h2><b>Sobre a Nocturna Corp</b></h2>
-            <img src="https://static.wikia.nocookie.net/aesthetics/images/6/64/Siouxsie-and-the-banshees-style-icon-12.png/revision/latest?cb=20250826154959" alt="Fachada gótica da empresa" width="320">
+    <!-- CSS INLINE no header -->
+    <header style="position: relative; overflow: hidden;">
+        <div class="container">
+            <h1><strong>Nocturna Corp</strong></h1>
             <p>
-                <ins>Fundada nas profundezas da noite</ins>, a Nocturna Corp une tradição gótica e tecnologia de ponta para criar soluções inovadoras e sofisticadas. Nossa missão é transformar o <del>ordinário</del> <mark>em extraordinário</mark>, sempre com um toque de <strong>mistério</strong> e <small>elegância sombria</small>.
+                <mark>Elegância nas sombras</mark>, inovação na noite.
             </p>
-        </section>
-        <section>
-            <h2>Nossos Diferenciais</h2>
-            <ul>
-                <li><mark>Designs exclusivos</mark> com inspiração gótica</li>
-                <li>Equipe <strong>especializada</strong> em inovação e criatividade</li>
-                <li><small>Ambiente de trabalho moderno e acolhedor</small></li>
-                <li><b>Compromisso com a excelência</b> e a ética</li>
-            </ul>
-        </section>
-        <section>
-            <h2><mark>Galeria</mark></h2>
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Ambiente interno gótico" width="320">
-            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Detalhe arquitetônico" width="320">
-        </section>
-    </div>
-    <footer>
-    <div>Contato: <strong>contato@nocturnacorp.com</strong> | <small>(11) 99999-9999</small></div>
-        <div>
-            <a href="https://instagram.com" target="_blank" title="Instagram">Instagram</a> |
-            <a href="https://facebook.com" target="_blank" title="Facebook">Facebook</a> |
-            <a href="https://twitter.com" target="_blank" title="Twitter">Twitter</a>
         </div>
-    <div>&copy; <b>2025 Nocturna Corp.</b> <del>Todos os direitos reservados.</del> <ins>Todos os direitos sombriamente reservados.</ins></div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="coquettecalc.html">Currículo</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SOBRE.html">Sobre</a></li>
+                <li><a href="PARCEIROS.html">Parceiros</a></li>
+                <li><a href="tabela.html">Tabela</a></li>
+                <li><a href="cadastro.html">Contratação</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container main-content">
+        <div>
+            <section>
+                <h2><b>Sobre a Nocturna Corp</b></h2>
+                <img src="https://static.wikia.nocookie.net/aesthetics/images/6/64/Siouxsie-and-the-banshees-style-icon-12.png/revision/latest?cb=20250826154959" alt="Fachada gótica da empresa">
+                <p>
+                    <ins>Fundada nas profundezas da noite</ins>, a Nocturna Corp une tradição gótica e tecnologia de ponta para criar soluções inovadoras e sofisticadas. Nossa missão é transformar o <del>ordinário</del> <mark>em extraordinário</mark>, sempre com um toque de <strong>mistério</strong> e <small>elegância sombria</small>.
+                </p>
+                <p>
+                    Nossa equipe trabalha sob a luz da lua, trazendo à tona as mais obscuras e brilhantes ideias que desafiam a convenção e encantam os sentidos.
+                </p>
+            </section>
+            
+            <section>
+                <h2>Nossos Diferenciais</h2>
+                <ul>
+                    <li><mark>Designs exclusivos</mark> com inspiração gótica</li>
+                    <li>Equipe <strong>especializada</strong> em inovação e criatividade</li>
+                    <li><small>Ambiente de trabalho moderno e acolhedor</small></li>
+                    <li><b>Compromisso com a excelência</b> e a ética</li>
+                    <li>Tecnologia de ponta com <mark>estética noturna</mark></li>
+                    <li>Soluções personalizadas para <strong>clientes exclusivos</strong></li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2><mark>Galeria</mark></h2>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Ambiente interno gótico">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Detalhe arquitetônico">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&q=80" alt="Produtos noturnos">
+                </div>
+            </section>
+        </div>
+        
+        <aside>
+            <h3>Explorar</h3>
+            <ul>
+                <li><a href="SOBRE.html">Nossa História</a></li>
+                <li><a href="coquettecalc.html">Equipe Executiva</a></li>
+                <li><a href="PRODUTOS.html">Inovações Noturnas</a></li>
+                <li><a href="#">Eventos Exclusivos</a></li>
+                <li><a href="#">Blog das Sombras</a></li>
+                <li><a href="cadastro.html">Carreiras na Noite</a></li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Próximos Eventos</h3>
+            <ul>
+                <li><strong>Lua Cheia:</strong> Lançamento de novos produtos</li>
+                <li><strong>Solstício de Inverno:</strong> Conferência anual</li>
+                <li><strong>Eclipse Lunar:</strong> Noite de portas abertas</li>
+            </ul>
+        </aside>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><strong>Email:</strong> contato@nocturnacorp.com</p>
+                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    <p><strong>Endereço:</strong> Rua das Sombras, 123 - Cidade Noturna</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="index.html">Início</a>
+                    <a href="PRODUTOS.html">Produtos</a>
+                    <a href="SOBRE.html">Sobre Nós</a>
+                    <a href="cadastro.html">Trabalhe Conosco</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Conecte-se</h3>
+                    <p>Siga-nos nas redes sociais</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank">Instagram</a>
+                        <a href="https://facebook.com" target="_blank">Facebook</a>
+                        <a href="https://twitter.com" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>&copy; <b>2025 Nocturna Corp.</b> <del>Todos os direitos reservados.</del> <ins>Todos os direitos sombriamente reservados.</ins></div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

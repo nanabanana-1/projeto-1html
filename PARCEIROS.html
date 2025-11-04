@@ -2,36 +2,254 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parceiros - Nocturna Corp</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Incorporado -->
+    <style>
+        /* Estilos específicos para a página Parceiros */
+        .partners-highlight {
+            background: linear-gradient(135deg, #331a00, #663300);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #cc9900;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(204, 153, 0, 0.5);
+        }
+        
+        .partners-highlight h2 {
+            color: #ffcc80;
+            text-align: center;
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .partners-list {
+            background-color: #1a0f00;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #cc9900;
+            margin: 2rem 0;
+        }
+        
+        .partners-list ul {
+            list-style: none;
+            columns: 2;
+            gap: 2rem;
+        }
+        
+        .partners-list li {
+            margin-bottom: 1rem;
+            break-inside: avoid;
+        }
+        
+        .partners-list a {
+            color: #ffcc80;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .partners-list a:hover {
+            background-color: #332200;
+            color: #ffdd99;
+            border-color: #cc9900;
+            box-shadow: 0 0 8px rgba(204, 153, 0, 0.3);
+        }
+        
+        .network-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            border: 2px solid #cc9900;
+            margin: 1rem auto;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .media-section {
+            background-color: #1a0f00;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #cc9900;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .quick-nav {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: #1a0f00;
+            border-radius: 8px;
+            border: 1px solid #cc9900;
+        }
+        
+        @media (max-width: 768px) {
+            .partners-list ul {
+                columns: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <ol>
-        <li>
-            <a href="index.html">Ir de volta para index</a>
-        </li>
-    </ol>
+    <div class="container">
+        <header>
+            <h1>NOCTURNA CORP</h1>
+            <p>Alianças nas Sombras - Nossa Rede de Parceiros</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SABAO.html">Sabão</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+                <li><a href="ESPONJA.html">Esponja</a></li>
+                <li><a href="BOMBRIL.html">Bombril</a></li>
+                <li><a href="SOBRE.html">Sobre</a></li>
+                <li><a href="PARCEIROS.html" style="background-color: #331a00; box-shadow: 0 0 10px #cc9900;">Parceiros</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <div class="partners-highlight">
+                    <h2>ALIANÇAS NAS SOMBRAS</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #ffcc80;">Nossa Rede de Parceiros Oficiais</p>
+                </div>
+                
+                <article>
+                    <div class="quick-nav">
+                        <!-- OL original mantido e estilizado -->
+                        <ol style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin: 0;">
+                                <a href="index.html" style="
+                                    display: inline-block;
+                                    padding: 10px 20px;
+                                    background-color: #331a00;
+                                    color: #ffcc80;
+                                    text-decoration: none;
+                                    border-radius: 5px;
+                                    border: 1px solid #cc9900;
+                                    transition: all 0.3s ease;
+                                " onmouseover="this.style.backgroundColor='#442200'; this.style.boxShadow='0 0 10px #cc9900'" 
+                                   onmouseout="this.style.backgroundColor='#331a00'; this.style.boxShadow='none'">
+                                    🦇 Ir de volta para Index 🦇
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
 
-    <h2>Parceiros Oficiais</h2>
-    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Rede de parceiros" width="300">
-    <ul>
-        <li><a href="https://music.youtube.com/">youtube music</a></li>
-        <li><a href="https://gov.com.br">gov</a></li>
-        <li><a href="https://open.spotify.com/intl-pt">spotify</a></li>
-        <li><a href="https://instagram.com">Instagram</a></li>
-        <li><a href="https://facebook.com">Facebook</a></li>
-        <li><a href="https://tiktok.com">tiktok</a></li>
-        <li><a href="https://g1.com.ce">g1 ceara</a></li>
-        <li><a href="https://www.familhao.com/">familhao</a></li>
-        <li><a href="https://x.com/">x/antigo twitter</a></li>
-    </ul>
-    <audio controls>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-    </audio>
-    <br>
-    <video width="320" height="180" controls>
-        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-    </video>
+                    <h2 style="color: #ffcc80; text-align: center; margin: 2rem 0 1rem 0;">Parceiros Oficiais</h2>
+                    
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Rede de parceiros" 
+                         class="network-image"
+                         style="width: 300px; height: auto;">
+                    
+                    <div class="partners-list">
+                        <!-- UL original mantido e estilizado -->
+                        <ul>
+                            <li><a href="https://music.youtube.com/" target="_blank">🎵 youtube music</a></li>
+                            <li><a href="https://gov.com.br" target="_blank">🏛️ gov</a></li>
+                            <li><a href="https://open.spotify.com/intl-pt" target="_blank">🎧 spotify</a></li>
+                            <li><a href="https://instagram.com" target="_blank">📸 Instagram</a></li>
+                            <li><a href="https://facebook.com" target="_blank">👥 Facebook</a></li>
+                            <li><a href="https://tiktok.com" target="_blank">🎬 tiktok</a></li>
+                            <li><a href="https://g1.com.ce" target="_blank">📰 g1 ceara</a></li>
+                            <li><a href="https://www.familhao.com/" target="_blank">👨‍👩‍👧‍👦 familhao</a></li>
+                            <li><a href="https://x.com/" target="_blank">🐦 x/antigo twitter</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="media-section">
+                        <h3 style="color: #ffcc80; margin-bottom: 1rem;">Experiência Sonora das Alianças</h3>
+                        <audio controls style="width: 100%; max-width: 500px;">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio.
+                        </audio>
+                    </div>
+                    
+                    <div class="media-section">
+                        <h3 style="color: #ffcc80; margin-bottom: 1rem;">Manifesto Visual das Parcerias</h3>
+                        <video width="320" height="180" controls style="max-width: 100%;">
+                            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="index.html" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: linear-gradient(135deg, #331a00, #663300);
+                            color: #ffcc80;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            border: 2px solid #cc9900;
+                            font-weight: bold;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px #cc9900'" 
+                           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            🏠 Retornar ao Covil Principal
+                        </a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <aside>
+            <h2>Nossas Alianças</h2>
+            <p style="color: #cc99ff; margin-bottom: 1rem; font-style: italic;">
+                "Nas sombras, encontramos força. Nas alianças, construímos impérios."
+            </p>
+            
+            <h3 style="margin-top: 2rem;">Categorias de Parceria</h3>
+            <ul>
+                <li>🔄 Tecnologia & Inovação</li>
+                <li>📢 Mídia & Comunicação</li>
+                <li>🎵 Entretenimento & Áudio</li>
+                <li>🏛️ Institucional & Governo</li>
+                <li>👥 Social & Comunidade</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background-color: #1a0f00; border-radius: 8px; border: 1px solid #cc9900;">
+                <h4 style="color: #ffcc80; margin-bottom: 0.5rem; text-align: center;">🌑 Convite às Sombras</h4>
+                <p style="color: #ffdd99; font-size: 0.9rem; text-align: center;">
+                    Sua organização busca uma aliança sobrenatural? 
+                    Entre em contato e descubra o poder das trevas.
+                </p>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="SOBRE.html" style="
+                    display: inline-block;
+                    padding: 8px 16px;
+                    background-color: #331a00;
+                    color: #ffcc80;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    border: 1px solid #cc9900;
+                    font-size: 0.9rem;
+                ">
+                    Conheça Nossa História
+                </a>
+            </div>
+        </aside>
+        
+        <footer>
+            <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #cc99ff;">
+                Unidos nas sombras, fortes na luz • Alianças que transcendem o tempo
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #9966cc;">
+                Parcerias estratégicas com as melhores organizações do mundo mortal e além
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

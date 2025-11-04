@@ -2,56 +2,518 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Minha apresentação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação - Ana Vitória</title>
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS INCORPORADO -->
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #764ba2;
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        /* NAVEGAÇÃO */
+        nav {
+            background-color: #764ba2;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: #fff;
+            color: #764ba2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-links a.active {
+            background-color: #fff;
+            color: #764ba2;
+        }
+        
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        /* SECTIONS */
+        section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 2px solid #764ba2;
+            padding-bottom: 10px;
+        }
+        
+        section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #764ba2;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        /* PERFIL */
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(118, 75, 162, 0.1);
+            border-radius: 15px;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #764ba2;
+            margin-right: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-info h2 {
+            border: none;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* LISTAS */
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        ul li, ol li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        ul li:before {
+            content: "▸";
+            color: #764ba2;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        
+        /* ÁUDIO E VÍDEO */
+        audio, video {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid #764ba2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* LINHAS HR */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #764ba2, transparent);
+            margin: 25px 0;
+        }
+        
+        /* BOTÕES E LINKS */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.6);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .contract-link {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            margin: 20px 0;
+        }
+        
+        .contract-link:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        /* ASIDE */
+        aside {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        aside h3 {
+            font-family: 'Playfair Display', serif;
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #764ba2;
+            padding-bottom: 10px;
+        }
+        
+        aside ul li {
+            margin-bottom: 15px;
+        }
+        
+        aside a {
+            color: #764ba2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(118, 75, 162, 0.1);
+        }
+        
+        aside a:hover {
+            color: #667eea;
+            padding-left: 10px;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            color: #764ba2;
+            padding: 30px 0 20px;
+            text-align: center;
+            border-top: 3px solid #764ba2;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #764ba2;
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #764ba2;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(118, 75, 162, 0.2);
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* CARDS DE OBJETIVOS */
+        .objective-card {
+            background: rgba(118, 75, 162, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .objective-card p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* DESTAQUES */
+        .highlight {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa8a8 100%);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Minha apresentação</h1>
+    <!-- CSS INLINE -->
+    <header style="position: relative; overflow: hidden;">
+        <div class="container">
+            <h1>Minha Apresentação</h1>
+        </div>
     </header>
+    
     <nav>
-        <a href="index.html">Início</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="SOBRE.html">Sobre</a> |
-        <a href="PARCEIROS.html">Parceiros</a>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SOBRE.html" class="active">Sobre</a></li>
+                <li><a href="PARCEIROS.html">Parceiros</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <section>
-            <article>
-                <h2>Ana Vitória</h2>
-                <img src="https://i.pinimg.com/1200x/bb/3a/3d/bb3a3dac899b0d34c4d3eedad3cb74ea.jpg" width="300" height="200" alt="Foto de Ana Vitória">
-                <p>Brasileiña, 16 anos,<br>
-                Em união estável, Rua dos Bobos, nº 0, 80028922</p>
-
-                <h2>Meus objetivos</h2>
-                <p>Tenho como objetivo ganhar muito money.</p>
+    
+    <div class="container main-content">
+        <div>
+            <section>
+                <div class="profile">
+                    <img src="https://i.pinimg.com/1200x/bb/3a/3d/bb3a3dac899b0d34c4d3eedad3cb74ea.jpg" alt="Foto de Ana Vitória" class="profile-img">
+                    <div class="profile-info">
+                        <h2>Ana Vitória</h2>
+                        <p>Brasileira, 16 anos</p>
+                        <p>Rua dos Bobos, nº 0, 80028922</p>
+                    </div>
+                </div>
+                
+                <h2>Meus Objetivos</h2>
+                
+                <div class="objective-card">
+                    <p>Tenho como objetivo ganhar muito money.</p>
+                </div>
+                
+                <h3>Música Motivacional</h3>
                 <audio controls>
                     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
                 </audio>
+                
                 <hr>
-                <p>E apagar o banco de dados da empresa.</p>
+                
+                <div class="objective-card">
+                    <p>E apagar o banco de dados da empresa. </p>
+                </div>
+                
                 <hr>
 
                 <h2>Formação</h2>
                 <p>Fundação Bradesco</p>
                 <ol>
                     <li>Cybersegurança</li>
-                    <li>Hacker</li>
+                    <li>Hacker Ético</li>
                 </ol>
+                
                 <hr>
 
                 <h2>Cursos</h2>
                 <ul>
-                    <li>Inglês;</li>
+                    <li>Inglês</li>
                     <li>Informática</li>
+                    <li>Desenvolvimento Web</li>
+                    <li>Design Gráfico</li>
                 </ul>
+                
+                <h3>Apresentação em Vídeo</h3>
                 <video width="320" height="180" controls>
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
                 </video>
 
-                <h3>Me contratar?</h3>
-                <a href="https://youtu.be/Id6i7JP-1bs?si=ULL5IEYDihZYZwW3" target="_blank">Sim</a>
-            </article>
-        </section>
+                <div class="btn-container">
+                    <h3>Me contratar?</h3>
+                    <a href="https://youtu.be/Id6i7JP-1bs?si=ULL5IEYDihZYZwW3" target="_blank" class="contract-link">SIM! Contrate-me!</a>
+                </div>
+            </section>
+        </div>
+        
         <aside>
             <h3>Links Rápidos</h3>
             <ul>
@@ -59,11 +521,56 @@
                 <li><a href="PRODUTOS.html">Produtos</a></li>
                 <li><a href="SOBRE.html">Sobre</a></li>
                 <li><a href="PARCEIROS.html">Parceiros</a></li>
+                <li><a href="#">Currículo Completo</a></li>
+                <li><a href="#">Portfólio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Habilidades</h3>
+            <ul>
+                <li>Programação</li>
+                <li>Design</li>
+                <li>Inglês Fluente</li>
+                <li>Trabalho em Equipe</li>
+                <li>Criatividade</li>
             </ul>
         </aside>
-    </main>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Ana Vitória. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><strong>Email:</strong> ana.vitoria@example.com</p>
+                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    <p><strong>Endereço:</strong> Rua dos Bobos, nº 0</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <a href="index.html">Início</a>
+                    <a href="PRODUTOS.html">Produtos</a>
+                    <a href="SOBRE.html">Sobre</a>
+                    <a href="PARCEIROS.html">Parceiros</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Conecte-se</h3>
+                    <p>Siga-me nas redes sociais</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ana Vitória. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

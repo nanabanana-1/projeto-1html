@@ -2,63 +2,289 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - Nocturna Corp</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Incorporado -->
+    <style>
+        /* Estilos específicos para a página Sobre */
+        .about-highlight {
+            background: linear-gradient(135deg, #1a1a33, #333366);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid #6666cc;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(102, 102, 204, 0.5);
+            text-align: center;
+        }
+        
+        .about-highlight h1 {
+            color: #b3b3ff;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mission-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #0f0f1a;
+            border-radius: 8px;
+            border-left: 4px solid #6666cc;
+        }
+        
+        .mission-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-header h2 {
+            color: #b3b3ff;
+            margin: 0;
+        }
+        
+        .mission-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            border: 2px solid #6666cc;
+            margin: 1rem 0;
+            display: block;
+        }
+        
+        .mission-text {
+            color: #ccccff;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .media-section {
+            background-color: #0f0f1a;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #6666cc;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .quick-nav {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #0f0f1a;
+            border-radius: 8px;
+            border: 1px solid #6666cc;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, #1a1a33, #0f0f1a);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #6666cc;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Sobre - Nocturna Corp</h1>
-    </header>
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="SOBRE.html">Sobre</a> |
-        <a href="PARCEIROS.html">Parceiros</a>
-    </nav>
-    <main>
-        <section>
-            <article>
-                <ol>
-                    <li>
-                        <a href="index.html">ir de volta para index</a>
-                    </li>
-                </ol>
-                <h2>🦇 Missão</h2>
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Missão Nocturna Corp" width="300">
-                <p>
-                    Iluminar a noite com inovação e elegância, conduzindo nossos clientes por caminhos onde a tradição gótica encontra a modernidade. Nossa missão é transformar o ordinário em extraordinário, com mistério e sofisticação em cada detalhe.
-                </p>
-                <h2>🌑 Visão</h2>
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Visão Nocturna Corp" width="300">
-                <p>
-                    Ser referência mundial em soluções criativas e sombrias, inspirando admiração e respeito por nossa ousadia, autenticidade e excelência. Almejamos um futuro onde a beleza obscura seja celebrada e reconhecida em todos os horizontes.
-                </p>
-                <h2>🕯️ Valores</h2>
-                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Valores Nocturna Corp" width="300">
-                <p>
-                    Cultivamos a integridade, a criatividade e o respeito às raízes ancestrais. Prezamos pela ética, pelo compromisso com a qualidade e pela busca incessante do requinte, sempre guiados pela luz tênue das velas em meio à escuridão.
-                </p>
-                <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
-                    Seu navegador não suporta áudio.
-                </audio>
-                <br>
-                <video width="320" height="180" controls>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
-            </article>
-        </section>
-        <aside>
-            <h3>Links Rápidos</h3>
+    <div class="container">
+        <header>
+            <h1>NOCTURNA CORP</h1>
+            <p>O Poder das Sombras na Limpeza Doméstica</p>
+        </header>
+        
+        <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SABAO.html">Sabão</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+                <li><a href="ESPONJA.html">Esponja</a></li>
+                <li><a href="BOMBRIL.html">Bombril</a></li>
+                <li><a href="SOBRE.html" style="background-color: #1a1a33; box-shadow: 0 0 10px #6666cc;">Sobre</a></li>
                 <li><a href="PARCEIROS.html">Parceiros</a></li>
             </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <div class="about-highlight">
+                    <h1>SOBRE A NOCTURNA CORP</h1>
+                    <p style="color: #b3b3ff; font-size: 1.2rem; font-style: italic;">
+                        "Desde as profundezas da noite, trazemos a luz da inovação"
+                    </p>
+                </div>
+                
+                <article>
+                    <div class="quick-nav">
+                        <!-- OL original mantido e estilizado -->
+                        <ol style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin: 0;">
+                                <a href="index.html" style="
+                                    display: inline-block;
+                                    padding: 10px 20px;
+                                    background-color: #1a1a33;
+                                    color: #b3b3ff;
+                                    text-decoration: none;
+                                    border-radius: 5px;
+                                    border: 1px solid #6666cc;
+                                    transition: all 0.3s ease;
+                                " onmouseover="this.style.backgroundColor='#2a2a4d'; this.style.boxShadow='0 0 10px #6666cc'" 
+                                   onmouseout="this.style.backgroundColor='#1a1a33'; this.style.boxShadow='none'">
+                                    🏰 Ir de volta para Index
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="values-grid">
+                        <!-- Missão -->
+                        <div class="mission-section">
+                            <div class="mission-header">
+                                <span style="font-size: 2rem;">🦇</span>
+                                <h2>Missão</h2>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Missão Nocturna Corp" 
+                                 class="mission-image">
+                            <p class="mission-text">
+                                Iluminar a noite com inovação e elegância, conduzindo nossos clientes por caminhos onde a tradição gótica encontra a modernidade. Nossa missão é transformar o ordinário em extraordinário, com mistério e sofisticação em cada detalhe.
+                            </p>
+                        </div>
+
+                        <!-- Visão -->
+                        <div class="mission-section">
+                            <div class="mission-header">
+                                <span style="font-size: 2rem;">🌑</span>
+                                <h2>Visão</h2>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Visão Nocturna Corp" 
+                                 class="mission-image">
+                            <p class="mission-text">
+                                Ser referência mundial em soluções criativas e sombrias, inspirando admiração e respeito por nossa ousadia, autenticidade e excelência. Almejamos um futuro onde a beleza obscura seja celebrada e reconhecida em todos os horizontes.
+                            </p>
+                        </div>
+
+                        <!-- Valores -->
+                        <div class="mission-section">
+                            <div class="mission-header">
+                                <span style="font-size: 2rem;">🕯️</span>
+                                <h2>Valores</h2>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Valores Nocturna Corp" 
+                                 class="mission-image">
+                            <p class="mission-text">
+                                Cultivamos a integridade, a criatividade e o respeito às raízes ancestrais. Prezamos pela ética, pelo compromisso com a qualidade e pela busca incessante do requinte, sempre guiados pela luz tênue das velas em meio à escuridão.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="media-section">
+                        <h3 style="color: #b3b3ff; margin-bottom: 1rem;">Hino Corporativo</h3>
+                        <audio controls style="width: 100%; max-width: 500px;">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio.
+                        </audio>
+                    </div>
+                    
+                    <div class="media-section">
+                        <h3 style="color: #b3b3ff; margin-bottom: 1rem;">Manifesto Visual</h3>
+                        <video width="320" height="180" controls style="max-width: 100%;">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="PARCEIROS.html" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: linear-gradient(135deg, #1a1a33, #333366);
+                            color: #b3b3ff;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            border: 2px solid #6666cc;
+                            font-weight: bold;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px #6666cc'" 
+                           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            🌐 Conheça Nossos Parceiros
+                        </a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <aside>
+            <h2>Nossa História</h2>
+            <p style="color: #ccccff; margin-bottom: 1rem; font-style: italic;">
+                "Fundada nas sombras de 2015, a Nocturna Corp surgiu da visão de unir o místico ao prático."
+            </p>
+            
+            <h3 style="margin-top: 2rem;">Linha do Tempo</h3>
+            <ul>
+                <li>🌙 2015 - Fundação</li>
+                <li>🦇 2016 - Primeiro Produto</li>
+                <li>💀 2018 - Expansão Nacional</li>
+                <li>👑 2020 - Reconhecimento Global</li>
+                <li>⚡ 2023 - Inovação Tecnológica</li>
+                <li>🌟 2025 - Liderança de Mercado</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background-color: #0f0f1a; border-radius: 8px; border: 1px solid #6666cc;">
+                <h4 style="color: #b3b3ff; margin-bottom: 0.5rem; text-align: center;">🏆 Reconhecimentos</h4>
+                <p style="color: #ccccff; font-size: 0.9rem; text-align: center;">
+                    Premiada por inovação e design em 2023. Referência em sustentabilidade e qualidade.
+                </p>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="PRODUTOS.html" style="
+                    display: inline-block;
+                    padding: 8px 16px;
+                    background-color: #1a1a33;
+                    color: #b3b3ff;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    border: 1px solid #6666cc;
+                    font-size: 0.9rem;
+                ">
+                    Nossos Produtos
+                </a>
+            </div>
         </aside>
-    </main>
-    <footer>
-        <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
-    </footer>
+        
+        <footer>
+            <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #b3b3ff;">
+                Transformando o ordinário em extraordinário desde 2015
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #9999cc;">
+                Inovação, tradição e mistério em cada detalhe
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

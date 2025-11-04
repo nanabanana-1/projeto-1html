@@ -2,40 +2,161 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>SABAO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabão - Nocturna Corp</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Incorporado -->
+    <style>
+        /* Estilos específicos para a página Sabão */
+        .product-highlight {
+            background: linear-gradient(135deg, #330033, #660066);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #cc00cc;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(204, 0, 204, 0.5);
+        }
+        
+        .product-highlight h2 {
+            color: #ff80ff;
+            text-align: center;
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .media-item {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            background-color: #1a001a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #cc00cc;
+        }
+        
+        .soap-features {
+            background-color: #1a001a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #cc00cc;
+            margin: 2rem 0;
+        }
+        
+        .soap-image {
+            border: 3px solid #cc00cc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(204, 0, 204, 0.3);
+        }
+        
+        .soap-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(204, 0, 204, 0.6);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>SABÃO</h1>
-        <p>Sabão Gótico - Limpeza das Sombras</p>
-    </header>
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="ESPONJA.html">Esponja</a> |
-        <a href="DETERGENTE.html">Detergente</a> |
-        <a href="BOMBRIL.html">Bombril</a>
-    </nav>
-    <main>
-        <section>
-            <article>
-                <a href="PRODUTOS.html">
-                    <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Sabão Gótico" width="220">
-                </a>
-                <p>Sabão Gótico - Limpeza das Sombras</p>
-                <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    Seu navegador não suporta áudio.
-                </audio>
-                <br>
-                <video width="320" height="180" controls>
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
-                <br>
-                <a href="PRODUTOS.html">Voltar para produtos</a>
-            </article>
-        </section>
+    <div class="container">
+        <header>
+            <h1>NOCTURNA CORP</h1>
+            <p>O Poder das Sombras na Limpeza Doméstica</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SABAO.html" style="background-color: #330033; box-shadow: 0 0 10px #cc00cc;">Sabão</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+                <li><a href="ESPONJA.html">Esponja</a></li>
+                <li><a href="BOMBRIL.html">Bombril</a></li>
+                <li><a href="SOBRE.html">Sobre</a></li>
+                <li><a href="PARCEIROS.html">Parceiros</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section>
+                <div class="product-highlight">
+                    <h2>SABÃO GÓTICO</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #ff80ff;">Limpeza das Sombras</p>
+                </div>
+                
+                <article>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <a href="PRODUTOS.html">
+                            <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" 
+                                 alt="Sabão Gótico" 
+                                 width="60%" 
+                                 style="max-width: 400px;"
+                                 class="soap-image">
+                        </a>
+                    </div>
+                    
+                    <p style="text-align: center; font-size: 1.3rem; color: #ff80ff; margin-bottom: 2rem;">
+                        Sabão Gótico - Limpeza das Sombras
+                    </p>
+                    
+                    <div class="soap-features">
+                        <h3 style="color: #cc00cc; margin-bottom: 1rem; text-align: center;">Poderes do Sabão Gótico</h3>
+                        <ul style="color: #ff80ff; list-style-type: none; text-align: center;">
+                            <li style="margin-bottom: 0.8rem;">✨ Purificação sobrenatural</li>
+                            <li style="margin-bottom: 0.8rem;">🕯️ Aroma de catedral noturna</li>
+                            <li style="margin-bottom: 0.8rem;">🌙 Eficácia lunar comprovada</li>
+                            <li style="margin-bottom: 0.8rem;">💀 Proteção contra impurezas mortais</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="media-container">
+                        <div class="media-item">
+                            <p style="color: #ff80ff; margin-bottom: 1rem; font-style: italic;">
+                                "O sussurro da espuma nas trevas"
+                            </p>
+                            <audio controls style="width: 100%;">
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                Seu navegador não suporta áudio.
+                            </audio>
+                        </div>
+                        
+                        <div class="media-item">
+                            <p style="color: #ff80ff; margin-bottom: 1rem; font-style: italic;">
+                                "A dança da limpeza sob o luar"
+                            </p>
+                            <video width="100%" height="auto" controls>
+                                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeo.
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="PRODUTOS.html" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: linear-gradient(135deg, #330033, #660066);
+                            color: #ff80ff;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            border: 2px solid #cc00cc;
+                            font-weight: bold;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px #cc00cc'" 
+                           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            🦇 Voltar para Produtos 🦇
+                        </a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
         <aside>
             <h2>Outros Produtos</h2>
             <ul>
@@ -43,10 +164,42 @@
                 <li><a href="DETERGENTE.html">Detergente Noturno</a></li>
                 <li><a href="BOMBRIL.html">Bombril das Trevas</a></li>
             </ul>
+            
+            <h3 style="margin-top: 2rem;">Especificações</h3>
+            <ul>
+                <li>Peso: 150g</li>
+                <li>Fragrância: Âmbar Noturno</li>
+                <li>Durabilidade: 30 lavagens</li>
+                <li>Embalagem: Caixa de Ébano</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background-color: #1a001a; border-radius: 8px; border: 1px solid #cc00cc;">
+                <h4 style="color: #ff80ff; margin-bottom: 0.5rem; text-align: center;">💎 Composição Exclusiva</h4>
+                <p style="color: #ffb3ff; font-size: 0.9rem; text-align: center;">
+                    Feito com essências raras colhidas sob o luar e óleos essenciais das profundezas.
+                </p>
+            </div>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="SOBRE.html" style="
+                    display: inline-block;
+                    padding: 8px 16px;
+                    background-color: #330033;
+                    color: #ff80ff;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    border: 1px solid #cc00cc;
+                    font-size: 0.9rem;
+                ">
+                    Nossa Alquimia
+                </a>
+            </div>
         </aside>
-    </main>
-    <footer>
-        <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
-    </footer>
+        
+        <footer>
+            <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">A escuridão nunca foi tão limpa</p>
+        </footer>
+    </div>
 </body>
 </html>

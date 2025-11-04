@@ -4,64 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOCTURNE CORP - Produtos Góticos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Incorporado */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside main"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto auto 1fr auto;
+            min-height: 100vh;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        header {
+            grid-area: header;
+            background-color: #1a001a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #8b008b;
+            box-shadow: 0 4px 8px rgba(139, 0, 139, 0.5);
+        }
+        
+        nav {
+            grid-area: nav;
+            background-color: #2d002d;
+            padding: 10px;
+            border-bottom: 2px solid #660066;
+        }
+        
+        aside {
+            grid-area: aside;
+            background-color: #1a001a;
+            padding: 15px;
+            border-right: 2px solid #660066;
+        }
+        
+        main {
+            grid-area: main;
+            background-color: #0f0f0f;
+            padding: 20px;
+        }
+        
+        footer {
+            grid-area: footer;
+            background-color: #1a001a;
+            padding: 20px;
+            text-align: center;
+            border-top: 3px solid #8b008b;
+        }
+        
+        h1 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5em;
+            color: #cc00cc;
+            text-shadow: 0 0 10px #cc00cc, 0 0 20px #cc00cc;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+        
+        h2 {
+            color: #b300b3;
+            border-bottom: 1px solid #660066;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .product-card {
+            background-color: #1a001a;
+            border: 1px solid #660066;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 0, 139, 0.7);
+        }
+        
+        .product-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #4d004d;
+        }
+        
+        .product-card b {
+            display: block;
+            margin-top: 10px;
+            color: #cc66cc;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-menu li {
+            margin: 0 15px;
+        }
+        
+        .nav-menu a {
+            color: #cc66cc;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #ff00ff;
+            border-bottom: 1px solid #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+        
+        .sidebar-title {
+            color: #cc66cc;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #660066;
+            padding-bottom: 5px;
+        }
+        
+        .sidebar-content {
+            color: #b3b3b3;
+            line-height: 1.6;
+        }
+        
+        footer p {
+            margin: 5px 0;
+            color: #cc66cc;
+        }
+        
+        .footer-links {
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: #cc66cc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>NOCTURNE CORP</h1>
-    <h2>Coleção Gótica</h2>
-    
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <td align="center">
-                <img src="https://t4.ftcdn.net/jpg/14/46/42/25/360_F_1446422544_y16sZezrJFwQASPeBgq8xa4rphmGtJUd.jpg" width="200" height="300" alt="Corset Gótico">
-                <br>
-                <b>Corset Vitoriano</b>
-            </td>
-            <td align="center">
-                <img src="data:image/jpeg;base64,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" width="200" height="300" alt="Botas Góticas">
-                <br>
-                <b>Botas Plataforma</b>
-            </td>
-            <td align="center">
-                <img src="https://cdn.gothika.com/wp-content/uploads/2023/06/c1d4e4724b0b180541d9e5301404ad6.jpg?strip=all&lossy=1&sharp=1&ssl=1" width="200" height="300" alt="Choker Gótico">
-                <br>
-                <b>Choker Dark</b>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <img src="https://i.pinimg.com/474x/0a/48/0c/0a480ce22c49fd96216c60bd68eb8067.jpg" width="200" height="300" alt="Vestido Gótico">
-                <br>
-                <b>Vestido Vitoriano</b>
-            </td>
-            <td align="center">
-                <img src="https://playhardlookdope.com/cdn/shop/products/gothic-ring-second-photo.jpg?v=1594253696" width="200" height="300" alt="Anel Caveira">
-                <br>
-                <b>Anel Caveira</b>
-            </td>
-            <td align="center">
-                <img src="https://img.ltwebstatic.com/images3_pi/2024/07/08/d2/1720402822d520442eb2b0167c482f4b1f09374627_thumbnail_405x.webp" width="200" height="300" alt="Jaqueta Gótica">
-                <br>
-                <b>moletom goth</b>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <img src="data:image/jpeg;base64,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" width="200" height="300" alt="Brincos Cruz">
-                <br>
-                <b>Brincos Cruz</b>
-            </td>
-            <td align="center">
-                <img src="https://i.pinimg.com/736x/1f/65/17/1f6517878ce8efc685da8b6d1600011c.jpg" width="200" height="300" alt="Luvas de Renda">
-                <br>
-                <b>Luvas Vitorianas</b>
-            </td>
-            <td align="center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzy7YyC5v9eLAgOefnIBnmoE90dp_jaFLtgw&s" width="200" height="300" alt="Capa Gótica">
-                <br>
-                <b>Capa de Veludo</b>
-            </td>
-        </tr>
-    </table>
-    <a href="index.html">voltar para o inicio</a> |
+    <div class="container">
+        <header>
+            <h1>NOCTURNE CORP</h1>
+            <p style="color: #cc66cc; font-style: italic;">Onde a escuridão encontra a elegância</p>
+        </header>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="PARCEIROS.html">Parceiros</a></li>
+                <li><a href="SOBRE.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <aside>
+            <div class="sidebar-title">Destaques</div>
+            <div class="sidebar-content">
+                <p>Nova coleção outono/inverno disponível!</p>
+                <p>Frete grátis para compras acima de R$ 200</p>
+                <p>Junte-se à nossa comunidade noturna</p>
+            </div>
+            
+            <div class="sidebar-title" style="margin-top: 30px;">Categorias</div>
+            <div class="sidebar-content">
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><a href="#" style="color: #cc66cc;">Roupas</a></li>
+                    <li><a href="#" style="color: #cc66cc;">Acessórios</a></li>
+                    <li><a href="#" style="color: #cc66cc;">Calçados</a></li>
+                    <li><a href="#" style="color: #cc66cc;">Joias</a></li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main>
+            <h2>Coleção Gótica</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://t4.ftcdn.net/jpg/14/46/42/25/360_F_1446422544_y16sZezrJFwQASPeBgq8xa4rphmGtJUd.jpg" alt="Corset Gótico">
+                    <b>Corset Vitoriano</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=300&fit=crop" alt="Botas Góticas">
+                    <b>Botas Plataforma</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://cdn.gothika.com/wp-content/uploads/2023/06/c1d4e4724b0b180541d9e5301404ad6.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="Choker Gótico">
+                    <b>Choker Dark</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/474x/0a/48/0c/0a480ce22c49fd96216c60bd68eb8067.jpg" alt="Vestido Gótico">
+                    <b>Vestido Vitoriano</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://playhardlookdope.com/cdn/shop/products/gothic-ring-second-photo.jpg?v=1594253696" alt="Anel Caveira">
+                    <b>Anel Caveira</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.ltwebstatic.com/images3_pi/2024/07/08/d2/1720402822d520442eb2b0167c482f4b1f09374627_thumbnail_405x.webp" alt="Moletom Gótico">
+                    <b>Moletom Goth</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=300&fit=crop" alt="Brincos Cruz">
+                    <b>Brincos Cruz</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/1f/65/17/1f6517878ce8efc685da8b6d1600011c.jpg" alt="Luvas de Renda">
+                    <b>Luvas Vitorianas</b>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=300&fit=crop" alt="Capa Gótica">
+                    <b>Capa de Veludo</b>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>NOCTURNE CORP &copy; 2024 - Todos os direitos reservados</p>
+            <p>Entre em contato: contato@nocturnecorp.com</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Trocas e Devoluções</a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

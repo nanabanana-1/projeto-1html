@@ -2,51 +2,449 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>BOMBRIL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBRIL - Bombril das Trevas</title>
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Grenze+Gotisch:wght@300;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    
+    <!-- CSS INCORPORADO -->
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a0a"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%231a1a1a" stroke-width="1"/></svg>');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #2d1b00 0%, #5a3400 50%, #8a5100 100%);
+            color: #ffcc80;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 3px solid #ff9800;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+        
+        header h1 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 204, 128, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        header p {
+            font-family: 'Grenze Gotisch', cursive;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+        /* NAVEGAÇÃO */
+        nav {
+            background-color: #2d1b00;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ff9800;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.8rem;
+            color: #ffcc80;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: #ffcc80;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: #ff9800;
+            color: #2d1b00;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+        }
+        
+        .nav-links a.active {
+            background-color: #ff9800;
+            color: #2d1b00;
+        }
+        
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        /* SECTIONS */
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-left: 4px solid #ff9800;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        section h2 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #ffcc80;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 1px solid #ff9800;
+            padding-bottom: 10px;
+        }
+        
+        section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        section img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 2px solid #ff9800;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.7);
+        }
+        
+        /* ÁUDIO E VÍDEO */
+        audio, video {
+            width: 100%;
+            max-width: 600px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 2px solid #ff9800;
+        }
+        
+        /* LISTA */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "✦";
+            color: #ff9800;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* ASIDE */
+        aside {
+            background: linear-gradient(145deg, #2d1b00 0%, #5a3400 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-right: 4px solid #ff9800;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        aside h2 {
+            font-family: 'Grenze Gotisch', cursive;
+            color: #ffcc80;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #ff9800;
+            padding-bottom: 10px;
+        }
+        
+        aside ul li {
+            margin-bottom: 15px;
+        }
+        
+        aside a {
+            color: #ffcc80;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        aside a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #2d1b00 0%, #5a3400 50%, #8a5100 100%);
+            color: #ffcc80;
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 3px solid #ff9800;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Grenze Gotisch', cursive;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ffcc80;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #ff9800;
+            border-radius: 50%;
+            color: #2d1b00;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #ffcc80;
+            color: #2d1b00;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #ff9800;
+            font-size: 0.9rem;
+        }
+        
+        /* BOTÕES E LINKS */
+        .btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #2d1b00;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #ffcc80;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+            transform: translateY(-2px);
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>BOMBRIL</h1>
-        <p>Bombril das Trevas - Brilho Sobrenatural</p>
+    <!-- CSS INLINE -->
+    <header style="position: relative; overflow: hidden;">
+        <div class="container">
+            <h1>BOMBRIL</h1>
+            <p>Bombril das Trevas - Brilho Sobrenatural</p>
+        </div>
     </header>
+    
     <nav>
-        <a href="index.html">Início</a> |
-        <a href="PRODUTOS.html">Produtos</a> |
-        <a href="SABAO.html">Sabão</a> |
-        <a href="ESPONJA.html">Esponja</a> |
-        <a href="DETERGENTE.html">Detergente</a>
+        <div class="container nav-container">
+            <div class="logo">Bombril</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="PRODUTOS.html">Produtos</a></li>
+                <li><a href="SABAO.html">Sabão</a></li>
+                <li><a href="ESPONJA.html">Esponja</a></li>
+                <li><a href="DETERGENTE.html">Detergente</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <section>
-            <article>
+    
+    <div class="container main-content">
+        <div>
+            <section>
+                <h2>Bombril das Trevas</h2>
                 <a href="PRODUTOS.html">
-                    <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Bombril das Trevas" width="220">
+                    <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/soap-1238212_1280.jpg" alt="Bombril das Trevas">
                 </a>
-                <p>Bombril das Trevas - Brilho Sobrenatural</p>
+                <p>O <strong>Bombril das Trevas</strong> oferece um brilho sobrenatural para suas superfícies. Com tecnologia das profundezas, nossas esponjas removem até as manchas mais sombrias, revelando um brilho que transcende o comum.</p>
+                
+                <h3>Experiência Auditiva das Trevas</h3>
                 <audio controls>
                     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
                     Seu navegador não suporta áudio.
                 </audio>
-                <br>
+                
+                <h3>Demonstração Visual do Poder</h3>
                 <video width="320" height="180" controls>
                     <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
+                
                 <br>
-                <a href="PRODUTOS.html">Voltar para produtos</a>
-            </article>
-        </section>
+                <a href="PRODUTOS.html" class="btn">Voltar para produtos</a>
+            </section>
+            
+            <section>
+                <h2>Características Sobrenaturais</h2>
+                <ul>
+                    <li><strong>Brilho das Trevas:</strong> Remove até as manchas mais persistentes</li>
+                    <li><strong>Durabilidade Sombria:</strong> Resistente e duradouro</li>
+                    <li><strong>Eficiência Noturna:</strong> Limpeza rápida e eficaz</li>
+                    <li><strong>Design Gótico:</strong> Estética única e misteriosa</li>
+                    <li><strong>Fórmula Secreta:</strong> Tecnologia avançada das profundezas</li>
+                </ul>
+            </section>
+        </div>
+        
         <aside>
             <h2>Outros Produtos</h2>
             <ul>
                 <li><a href="SABAO.html">Sabão Gótico</a></li>
                 <li><a href="ESPONJA.html">Esponja Sombria</a></li>
                 <li><a href="DETERGENTE.html">Detergente Noturno</a></li>
+                <li><a href="#">Lustrador das Sombras</a></li>
+                <li><a href="#">Desinfetante Oculto</a></li>
+                <li><a href="#">Limpa Vidros Fantasma</a></li>
+            </ul>
+            
+            <h2 style="margin-top: 30px;">Ofertas das Trevas</h2>
+            <ul>
+                <li><strong>Lua Nova:</strong> 20% off em todos os produtos</li>
+                <li><strong>Meia-Noite:</strong> Compre 3, leve 4</li>
+                <li><strong>Eclipse:</strong> Frete grátis para pedidos acima de R$50</li>
             </ul>
         </aside>
-    </main>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><strong>Email:</strong> trevas@bombril.com</p>
+                    <p><strong>Telefone:</strong> (11) 66666-6666</p>
+                    <p><strong>Endereço:</strong> Rua das Almas, 666 - Cidade das Trevas</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="index.html">Início</a>
+                    <a href="PRODUTOS.html">Produtos</a>
+                    <a href="SABAO.html">Sabão</a>
+                    <a href="ESPONJA.html">Esponja</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Conecte-se</h3>
+                    <p>Siga-nos nas redes para ofertas sombrias</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nocturna Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
